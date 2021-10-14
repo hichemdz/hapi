@@ -31,16 +31,16 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <Guest>
+        <Guest title='login in'>
             <Head title="Log in" />
-
+            
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Email" />
+                    <Label className='text-green-100 ' forInput="email" value="Email" />
 
                     <Input
                         type="text"
@@ -54,7 +54,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label className='text-green-100 ' forInput="password" value="Password" />
 
                     <Input
                         type="password"
@@ -67,10 +67,10 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="block mt-4">
-                    <label className="flex items-center">
+                    <label className="flex items-center ">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ml-2 text-sm text-green-100">Remember me</span>
                     </label>
                 </div>
 
@@ -78,13 +78,13 @@ export default function Login({ status, canResetPassword }) {
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
+                            className="underline text-sm text-green-100 hover:text-gray-900"
                         >
                             Forgot your password?
                         </Link>
                     )}
 
-                    <Button className="ml-4" processing={processing}>
+                    <Button className="ml-4 bg-green-950" processing={processing}>
                         Log in
                     </Button>
                 </div>

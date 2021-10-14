@@ -31,20 +31,20 @@ export default function Register() {
     };
 
     return (
-        <Guest>
+        <Guest title="Register">
             <Head title="Register" />
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
+            <form className='px-2' onSubmit={submit}>
                 <div>
-                    <Label forInput="name" value="Name" />
+                    <Label className='text-green-100 '  forInput="name" value="Name" />
 
                     <Input
                         type="text"
                         name="name"
                         value={data.name}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full h-10 h-10"
                         autoComplete="name"
                         isFocused={true}
                         handleChange={onHandleChange}
@@ -53,13 +53,13 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="email" value="Email" />
+                    <Label className='text-green-100 '  forInput="email" value="Email" />
 
                     <Input
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full h-10"
                         autoComplete="username"
                         handleChange={onHandleChange}
                         required
@@ -67,13 +67,13 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                    <Label className='text-green-100 '  forInput="password" value="Password" />
 
                     <Input
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full h-10"
                         autoComplete="new-password"
                         handleChange={onHandleChange}
                         required
@@ -81,24 +81,24 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password_confirmation" value="Confirm Password" />
+                    <Label className='text-green-100 '  forInput="password_confirmation" value="Confirm Password" />
 
                     <Input
                         type="password"
                         name="password_confirmation"
                         value={data.password_confirmation}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full h-10"
                         handleChange={onHandleChange}
                         required
                     />
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
+                    <Link href={route('login')} className="underline text-sm text-green-100 hover:text-gray-900">
                         Already registered?
                     </Link>
 
-                    <Button className="ml-4" processing={processing}>
+                    <Button className="bg-green-950 ml-4" processing={processing}>
                         Register
                     </Button>
                 </div>
